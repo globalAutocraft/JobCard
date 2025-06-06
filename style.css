@@ -1,0 +1,947 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: #f2f2f2;
+    height: 100dvh;
+    width: 100vw;
+}
+
+.login-page {
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    max-width: 400px;
+    width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+.loginHeader {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.loginHeader h3 {
+    margin-bottom: 8px;
+    color: #007BFF;
+}
+
+.loginform-wrapper form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontainer {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.formcontainer label {
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #555;
+}
+
+.formcontainer input[type="text"],
+.formcontainer input[type="password"] {
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 15px;
+    transition: border-color 0.3s ease;
+}
+
+.formcontainer input[type="text"]:focus,
+.formcontainer input[type="password"]:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.formcontainer input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formcontainer input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+.HeaderPages {
+    width: 100vw;
+    height: 40px;
+    background: #18558B;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    overflow: none;
+}
+
+.HeaderPages .menu-toggle {
+    display: none;
+}
+
+.HeaderPages h3 {
+    font-size: 18px;
+    line-height: 40px;
+    margin-left: 25px;
+    color: white;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.HeaderPages h3:hover {
+    color: yellow;
+    margin-left: 28px;
+}
+
+.HeaderPages ul {
+    display: flex;
+    line-height: 40px;
+    gap: 0px;
+    margin-right: 10px;
+}
+
+.HeaderPages ul li {
+    list-style: none;
+    padding: 0px 6px;
+    border-right: 1px solid white;
+}
+.HeaderPages ul li:last-child{
+    border:none ;
+    padding-left:10px ;
+    padding-top: 5px;
+}
+
+.HeaderPages ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    position: relative;
+    transition: 0.5s;
+    text-wrap: nowrap;
+}
+
+.HeaderPages ul li a:after {
+    content: '';
+    background: white;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0%;
+    transition: 0.7s;
+    height: 2px;
+}
+
+.HeaderPages ul li a:hover:after {
+    width: 90%;
+}
+
+.HeaderPages ul li a:hover {
+    color: #dfdede;
+}
+
+main {
+    position: relative;
+}
+
+.mainContent {
+    width: 95vw;
+    max-width: 2000px;
+    height: calc(100dvh - 50px);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.mainContent::-webkit-scrollbar {
+    display: none;
+}
+
+.pending-job-card-table-content {
+    padding: 5px 10px;
+}
+
+.submitTag {
+    width: 100%;
+    height: 40px;
+    background: #fff;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    z-index: 3;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 25px;
+    box-shadow: 0px -2px 0 rgba(0, 0, 0, 0.5);
+}
+
+.submitTag button {
+    width: 200px;
+    height: 35px;
+    border-radius: 15px;
+    border: none;
+    background: #18558B;
+    border: 1px solid #4090d6;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submitTag button:hover {
+    transform: translateX(3px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.pending-job-card-table-content table {
+    border-collapse: collapse;
+    background: rgb(255, 252, 252);
+    width: 100%;
+    margin-top: 10px;
+    border: 1px solid #4090d6;
+    text-align: left;
+    position: relative;
+}
+
+.pending-job-card-table-content table thead tr th {
+    background: #4090d6;
+    color: white;
+    padding: 2px 3px;
+    position: sticky;
+    top: -1px;
+    min-width: 100px;
+}
+
+.pending-job-card-table-content table tbody tr td {
+    padding: 5px 3px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(64, 144, 214, 0.5);
+    min-width: 100px;
+}
+
+.pending-job-card-table-content table tbody tr:hover {
+    background: #f5faff;
+}
+
+.dropdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+}
+
+.dropdown .dropdown-section {
+    padding: 5px 10px;
+    box-shadow: 0px 4px 8px #4090d6;
+    display: flex;
+    flex-direction: column;
+}
+
+.dropdown .dropdown-section label {
+    background: #4090d6;
+    color: white;
+    text-align: center;
+    padding: 2px 0px;
+    border: 1px solid #4090d6;
+}
+
+.dropdown .dropdown-section.advisorRejected label {
+    background: #d66a40;
+    border: 1px solid #d66a40;
+}
+
+.dropdown .dropdown-section input,
+.dropdown .dropdown-section select {
+    border: 1px solid #4090d6;
+    padding: 5px 5px;
+    color: #4090d6;
+    font-weight: bold;
+    outline: none;
+}
+
+.dropdown .dropdown-section.advisorRejected input,
+.dropdown .dropdown-section.advisorRejected select {
+    border: 1px solid #d66a40;
+    color: #d66a40;
+}
+
+#underWorking_table tbody tr.rejectedUnderWorking td,
+#technicianWorking_table tbody tr.rejectedUnderWorking td {
+    background: rgba(214, 106, 64, 0.3);
+}
+
+#underWorking_table tbody tr td:nth-child(8) input,
+#underWorking_table tbody tr td:nth-child(9) input {
+    display: none;
+}
+
+#underWorking_table tbody tr td:nth-child(7) input,
+#underWorking_table tbody tr td:nth-child(8) input,
+#underWorking_table tbody tr td:nth-child(9) input {
+    width: 90%;
+    height: 25px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: 0.3s;
+    background: transparent;
+}
+
+#underWorking_table tbody tr td:nth-child(7) input {
+    border: 1px solid #4090d6;
+}
+
+#underWorking_table tbody tr td:nth-child(8) input {
+    border: 1px solid #d66a40;
+}
+
+#underWorking_table tbody tr td:nth-child(9) input {
+    border: 1px solid #017c0c;
+}
+
+#underWorking_table tbody tr td:nth-child(7) input:hover {
+    background: #4090d6;
+}
+
+#underWorking_table tbody tr td:nth-child(8) input:hover {
+    background: #d66a40;
+}
+
+#underWorking_table tbody tr td:nth-child(9) input:hover {
+    background: #017c0c;
+}
+
+#underWorking_table tbody tr td:nth-child(7) input:hover,
+#underWorking_table tbody tr td:nth-child(8) input:hover,
+#underWorking_table tbody tr td:nth-child(9) input:hover {
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-left: 2px;
+    color: white;
+}
+
+#underWorking_table tbody tr:hover {
+    background: transparent;
+}
+
+#PJCT_table tr td input,
+#PJCT_table tr td select,
+#RejAdv_table tr td input,
+#RejAdv_table tr td select {
+    width: 100%;
+    height: 25px;
+    box-sizing: border-box;
+    display: block;
+    border: 1px solid rgba(64, 144, 214, 0.5);
+    outline: none;
+    color: #007BFF;
+    font-weight: bold;
+    padding: 0px 0px 0px 5px;
+}
+
+#PJCT_table tr td input:focus,
+#PJCT_table tr td select:focus,
+#RejAdv_table tr td input:focus,
+#RejAdv_table tr td select:focus {
+    background-color: rgba(64, 144, 214, 0.1);
+}
+
+.selected {
+    outline: 2px solid #007bff;
+    background-color: #e0f0ff;
+}
+
+.HeaderPages ul li.active {
+    background: #84b6e2;
+    padding: 0px 10px;
+    line-height: 40px;
+}
+
+.HeaderPages ul li.active a:after {
+    width: 90%;
+}
+
+#AdvisorChecking_tbody tr td input[type="button"],
+#PendD_tbody tr td input[type="button"],
+#CallPend_tbody tr td input[type="button"] {
+    background: #f1f6fa;
+    border: 1px solid #24A0ED;
+    text-align: center;
+    width: 90%;
+    padding: 3px 10px;
+    border-radius: 5px;
+    color: white;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
+    color: #24A0ED;
+    cursor: pointer;
+}
+
+#AdvisorChecking_tbody tr td input[type="button"]:hover,
+#PendD_tbody tr td input[type="button"]:hover,
+#CallPend_tbody tr td input[type="button"]:hover {
+    transform: translateX(3px);
+    background: #24A0ED;
+    color: white;
+}
+
+.advisorUpdate {
+    width: 100%;
+    height: 90dvh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 2;
+}
+
+.advisorUpdate .formbox {
+    width: 300px;
+    height: 500px;
+    background: rgba(255, 255, 255, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    border: 1px solid #24A0ED;
+    position: relative;
+}
+
+.advisorUpdate .formbox h3 {
+    color: #18558B;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 0px;
+    display: block;
+    border-bottom: 1px solid #18558B;
+    margin-bottom: 10px;
+}
+
+.advisorUpdate .formboxBig {
+    width: 90%;
+    max-width: 500px;
+    height: 80dvh;
+    background: rgba(255, 255, 255, 1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    border: 1px solid #24A0ED;
+    position: relative;
+}
+
+.advisorUpdate .formboxBig h3 {
+    color: #18558B;
+    font-size: 15px;
+    text-align: center;
+    padding: 10px 0px;
+    display: block;
+    border-bottom: 1px solid #18558B;
+    margin-bottom: 10px;
+    height: 40px;
+    box-shadow: 0px 5px 5px rgba(24, 85, 139, 0.8);
+}
+
+.advisorUpdate .formboxBig form {
+    position: relative;
+    height: calc(80dvh - 40px);
+    width: 100%;
+    max-width: 500px;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer {
+    position: absolute;
+    left: 0;
+    bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    border-top: 1px solid #18558B;
+    padding-top: 10px;
+    box-shadow: 0px -5px 5px rgba(24, 85, 139, 0.8);
+    background: #ffffff;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer input {
+    padding: 0 10px;
+    width: 100px;
+    min-width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #4090d6;
+    background: #4090d6;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer input:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer input:disabled:hover {
+    transform: translateY(0px);
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 1);
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer i {
+    padding: 5px 10px;
+    border: 1px solid #4090d6;
+    color: #4090d6;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer .fa-circle-minus {
+    color: red;
+    border: 1px solid red;
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer .fa-circle-minus:hover {
+    box-shadow: 0px 4px 8px red;
+
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer i:hover {
+    box-shadow: 0px 4px 8px #4090d6;
+    transform: translateY(1px);
+}
+
+.advisorUpdate .formboxBig .form-Container-Delivery-Form-footer input:hover {
+    transform: translateY(1px);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.form-Container-Delivery-Form {
+    padding: 8px 20px;
+}
+
+.form-Container-Delivery-Form label {
+    color: #555;
+    font-size: 13px;
+}
+
+.form-Container-Delivery-Form input[type="checkbox"] {
+    width: 30px;
+}
+
+.sectionForm {
+    overflow: auto;
+    width: 100%;
+    height: 70dvh;
+    padding-bottom: 50px;
+}
+
+.paraGray {
+    color: rgb(90, 89, 89);
+    font-size: 13px;
+    padding-top: 3px;
+}
+
+.questionare .fa-star {
+    color: gray;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.questionare textarea {
+    width: 95%;
+    height: 60px;
+    resize: none;
+    outline: none;
+    padding: 2px 6px;
+}
+
+
+.subparaStrong {
+    font-size: 14px;
+    padding-top: 5px;
+}
+
+.questionare {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 5px;
+}
+
+.questionare .questionare-divs {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questionare .questionare-divs label {
+    cursor: pointer;
+    color: black;
+}
+
+.questionare .questionare-divs input {
+    margin-left: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+
+.form-Container-update-Advisor {
+    height: fit-content;
+    width: 100%;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); */
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-Container-update-Advisor label {
+    background: #18558B;
+    color: white;
+    padding: 5px 0px;
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.8);
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.form-Container-update-Advisor input,
+.form-Container-update-Advisor select {
+    height: 35px;
+    text-align: left;
+    border: 1px solid #18558B;
+    padding-left: 10px;
+    outline: none;
+}
+
+.form-Container-update-Advisor input:focus,
+.form-Container-update-Advisor select:focus {
+    box-shadow: 0px 2px 4px #18558B;
+}
+
+.form-Container-update-Advisor input[type="submit"] {
+    position: absolute;
+    bottom: 10px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 15px;
+    text-align: center;
+    background: #84b6e2;
+    transition: 0.3s;
+}
+
+.form-Container-update-Advisor input[type="submit"]:hover {
+    background: #24A0ED;
+    cursor: pointer;
+    transform: translateX(-49%);
+}
+
+.fa-xmark {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+    font-weight: bolder;
+    font-size: 22px;
+    text-shadow: 0px 1px 2px rgba(255, 0, 0, 1);
+    cursor: pointer;
+}
+
+.fa-right-from-bracket {
+    font-size: 22px;
+}
+
+.login-page-cred {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+table tr td {
+    font-size: 13px;
+}
+
+.form-Container-Del-update {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.form-Container-Del-update input {
+    width: 22px;
+}
+
+#RejAdv_table th,
+#RejSer_table th {
+    background: #d66a40;
+}
+
+#RejAdv_table tbody tr:hover {
+    background: rgba(214, 106, 64, 0.1);
+}
+
+#AdvRejSubmit {
+    background: #d66a40;
+}
+
+@media (max-width: 1100px) {
+    .mainContent {
+        width: 100vw;
+    }
+
+    .HeaderPages ul {
+        display: none;
+        flex-direction: column;
+        height: calc(100dvh - 40px);
+        gap: 0px;
+        width: 250px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-top: 0px;
+        margin-right: 0px;
+        background: #A1C6E1;
+        margin-top: 40px;
+        position: absolute;
+        top: 0px;
+        z-index: 1;
+        transition: 0.3s;
+    }
+
+    .HeaderPages ul li {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+        margin-top: 10px;
+        line-height: 30px;
+        cursor: pointer;
+        padding-left: 5px;
+        transition: 0.3s;
+    }
+
+    .HeaderPages ul li.active {
+        background: #18558B;
+    }
+
+    .HeaderPages ul li.active a:after {
+        width: 90%;
+    }
+
+    .HeaderPages ul li:hover {
+        background: #4090d6;
+    }
+
+    .HeaderPages .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 5px;
+        right: 10px;
+        background: transparent;
+        border: none;
+        font-size: 25px;
+        color: white;
+        text-shadow: 0px 2px 4px rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .HeaderPages .menu-toggle:hover {
+        right: 12px;
+    }
+
+
+
+    .login-page {
+        padding: 20px;
+    }
+
+    .loginHeader h3 {
+        font-size: 18px;
+    }
+
+    .pending-job-card-table-content table thead tr th {
+        display: none;
+    }
+
+    .pending-job-card-table-content table tbody {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        margin-top: 15px;
+    }
+
+    .pending-job-card-table-content table tbody tr {
+        display: flex;
+        flex-direction: column;
+        margin-top: 10px;
+        box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .pending-job-card-table-content table tbody tr td {
+        border: none;
+        padding: 1px 5px;
+        text-align: right;
+        position: relative;
+        padding-right: 5px;
+        border: 1px solid #dddddd;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .pending-job-card-table-content table tbody tr td:first-child {
+        text-align: center;
+        padding-right: 30%;
+        background: #18558B;
+        color: white;
+        padding-top: 3px;
+        padding-bottom: 3px;
+        transition: 0.3s;
+    }
+
+    .pending-job-card-table-content.advisorRejected table tbody tr td:first-child {
+        background: #d66a40;
+    }
+
+    .pending-job-card-table-content table tbody tr {
+        transition: 0.3s;
+    }
+
+    .pending-job-card-table-content table tbody tr td {
+        background: #ffffff;
+    }
+
+    .pending-job-card-table-content table tbody tr:hover {
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 1);
+        transform: scale(1.02);
+        z-index: 4;
+    }
+
+    .pending-job-card-table-content table tbody tr:hover td:first-child {
+        background: #24A0ED;
+    }
+
+    .pending-job-card-table-content.advisorRejected table tbody tr:hover td:first-child {
+        background: #862b07;
+    }
+
+
+
+    #underWorking_table tbody tr.rejectedUnderWorking td,
+    #technicianWorking_table tbody tr.rejectedUnderWorking td {
+        background: white;
+    }
+
+    #underWorking_table tbody tr.rejectedUnderWorking td:first-child,
+    #technicianWorking_table tbody tr.rejectedUnderWorking td:first-child {
+        background: #862b07;
+    }
+
+    .pending-job-card-table-content table tbody tr td::before {
+        content: attr(data-label);
+        white-space: nowrap;
+        text-align: left;
+        width: 50%;
+        margin-right: 5px;
+        color: #242323;
+        position: absolute;
+        left: 5px;
+        background: #dddddd;
+    }
+
+    .pending-job-card-table-content table tbody tr td:first-child::before {
+        content: '';
+        white-space: nowrap;
+        text-align: left;
+        width: 0%;
+        margin-right: 0px;
+        color: #242323;
+        position: absolute;
+        left: 0px;
+        background: #dddddd;
+    }
+
+    .pending-job-card-table-content table tbody tr:hover {
+        background: transparent;
+    }
+
+    .pending-job-card-table-content table tbody tr td:hover {
+        background: #ffffff;
+    }
+
+    #underWorking_table tbody tr td:nth-child(7) input {
+        background: #4090d6;
+        max-width: 100px;
+        align-items: center;
+        color: white;
+    }
+
+    #underWorking_table tbody tr td:nth-child(8) input {
+        background: #d66a40;
+        color: white;
+        max-width: 100px;
+        align-items: center;
+    }
+
+    #underWorking_table tbody tr td:nth-child(9) input {
+        background: #017c0c;
+        align-items: center;
+        color: white;
+        max-width: 100px;
+    }
+
+    #PJCT_table tr td input,
+    #PJCT_table tr td select,
+    #RejAdv_table tr td input,
+    #RejAdv_table tr td select {
+        width: 45%;
+        font-weight: normal;
+    }
+
+    #AdvisorChecking_tbody tr td input[type="button"],
+    #PendD_tbody tr td input[type="button"],
+    #CallPend_tbody tr td input[type="button"]  {
+        background: #24A0ED;
+        width: 45%;
+        color: white;
+    }
+
+    .form-Container-update-Advisor input[type="submit"] {
+        background: #24A0ED;
+    }
+
+    .form-Container-update-Advisor input[type="submit"]:hover {
+        transform: translateX(-49%);
+    }
+
+    .submitTag {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 20px;
+    }
+
+    .loginHeader h3 {
+        font-size: 18px;
+    }
+}
